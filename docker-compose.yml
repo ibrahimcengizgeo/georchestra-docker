@@ -97,6 +97,7 @@ services:
 
   geoserver:
     image: georchestra/geoserver:latest
+    user: root
     depends_on:
       - ldap
     volumes:
