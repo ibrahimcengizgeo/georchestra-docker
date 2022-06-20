@@ -39,7 +39,7 @@
 # Accepted values, in order of severity: "DEBUG", "INFO", "WARN", "ERROR", "FATAL", "PANIC"
 # Messages at and above the selected level will be logged.
 
-logLevel = "INFO"
+logLevel = "DEBUG"
 
 # Backends throttle duration: minimum duration in seconds between 2 events from providers
 # before applying a new configuration. It avoids unnecessary reloads if multiples events
@@ -97,14 +97,18 @@ defaultEntryPoints = ["http", "https"]
   address = ":443"
     [entryPoints.https.tls]
       [[entryPoints.https.tls.certificates]]
-      certFile = "/etc/traefik/ssl/georchestra.mydomain.org.crt"
-      keyFile = "/etc/traefik/ssl/georchestra.mydomain.org.key"
+      certFile = "/etc/traefik/ssl/STAR_geo-solutions.it.pem"
+      keyFile = "/etc/traefik/ssl/STAR_geo-solutions.it.key"
+#      certFile = "/etc/traefik/ssl/georchestra.geo-solutions.it.crt"
+#      keyFile = "/etc/traefik/ssl/georchestra.geo-solutions.it.key"
   [entryPoints.traefik-api]
   address = ":8080"
     [entryPoints.traefik-api.tls]
       [[entryPoints.traefik-api.tls.certificates]]
-      certFile = "/etc/traefik/ssl/georchestra.mydomain.org.crt"
-      keyFile = "/etc/traefik/ssl/georchestra.mydomain.org.key"
+      certFile = "/etc/traefik/ssl/STAR_geo-solutions.it.pem"
+      keyFile = "/etc/traefik/ssl/STAR_geo-solutions.it.key"
+#      certFile = "/etc/traefik/ssl/georchestra.geo-solutions.it.crt"
+#      keyFile = "/etc/traefik/ssl/georchestra.geo-solutions.it.key"
 ################################################################
 # Web configuration backend
 ################################################################
