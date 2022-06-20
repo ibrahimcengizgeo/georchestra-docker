@@ -1,0 +1,978 @@
+dn: dc=georchestra,dc=org
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: georchestra.org
+dc: georchestra
+structuralObjectClass: organization
+entryUUID: f6bf1c46-64d5-1039-9c0c-5376bba4e9ec
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093927Z
+entryCSN: 20190906093927.803874Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093927Z
+
+dn: cn=admin,dc=georchestra,dc=org
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e1NTSEF9eGxTY2t2d1RqWU45NUk4STluejN3b00yVEhFcytVMzc=
+structuralObjectClass: organizationalRole
+entryUUID: f7536270-64d5-1039-9c0d-5376bba4e9ec
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093928Z
+entryCSN: 20190906093928.775593Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093928Z
+
+dn: ou=users,dc=georchestra,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+structuralObjectClass: organizationalUnit
+entryUUID: f91f817e-64d5-1039-8d57-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093931Z
+entryCSN: 20190906093931.791051Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093931Z
+
+dn: ou=pendingusers,dc=georchestra,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pendingusers
+structuralObjectClass: organizationalUnit
+entryUUID: f921904a-64d5-1039-8d58-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093931Z
+entryCSN: 20190906093931.804536Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093931Z
+
+dn: uid=testuser,ou=users,dc=georchestra,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: top
+mail: psc+testuser@georchestra.org
+uid: testuser
+givenName: Test
+sn: USER
+l: SRID=4326;POLYGON((-5.76043921875 48.698689609375,-2.02508765625 50.10493
+ 9609375,2.45733421875 51.423298984375,7.51104515625 47.644002109375,6.23663
+ 109375 45.842244296875,7.29131859375 42.853963046875,3.59991234375 41.97505
+ 6796875,-2.55243140625 43.601033359375,-5.76043921875 48.698689609375))
+description: USER
+cn: testuser
+structuralObjectClass: inetOrgPerson
+entryUUID: f92681a4-64d5-1039-8d59-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093931Z
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=psc,ou=orgs,dc=georchestra,dc=org
+userPassword:: e1NTSEF9ZFUxWDNDWVVCT0YxS0RLL1BQVVdmTkwyV3FJeE5UZzRPRE01TnpJN
+ U9ESTA=
+entryCSN: 20200507082209.825754Z#000000#000#000000
+modifyTimestamp: 20200507082209Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: uid=testreviewer,ou=users,dc=georchestra,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: shadowAccount
+objectClass: top
+uid: testreviewer
+givenName: Test
+sn: REVIEWER
+description: Reviewer
+userPassword:: e1NIQX1Nb3IzdXZ5cnpISWpHK0crSEcvblhxZW8reWc9
+mail: psc+testreviewer@georchestra.org
+cn: testreviewer
+structuralObjectClass: inetOrgPerson
+entryUUID: f9560398-64d5-1039-8d5a-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+entryCSN: 20190906093932.148275Z#000000#000#000000
+modifyTimestamp: 20190906093932Z
+memberOf: cn=GN_REVIEWER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=cra,ou=orgs,dc=georchestra,dc=org
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: uid=testeditor,ou=users,dc=georchestra,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: shadowAccount
+objectClass: top
+uid: testeditor
+givenName: Test
+sn: EDITOR
+description: editor
+userPassword:: e1NIQX1mVTFvSmdzV0FEZ1ZtTHBHeHBxdFBVa2RiekU9
+mail: psc+testeditor@georchestra.org
+cn: testeditor
+structuralObjectClass: inetOrgPerson
+entryUUID: f96909d4-64d5-1039-8d5b-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+entryCSN: 20190906093932.272949Z#000000#000#000000
+modifyTimestamp: 20190906093932Z
+memberOf: cn=GN_EDITOR,ou=roles,dc=georchestra,dc=org
+memberOf: cn=CKAN_EDITOR,ou=roles,dc=georchestra,dc=org
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=c2c,ou=orgs,dc=georchestra,dc=org
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: uid=testadmin,ou=users,dc=georchestra,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: top
+objectClass: georchestraUser
+uid: testadmin
+givenName: Test
+sn: ADMIN
+description: Admin user
+structuralObjectClass: inetOrgPerson
+entryUUID: f97b5d96-64d5-1039-8d5c-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+memberOf: cn=ADMINISTRATOR,ou=roles,dc=georchestra,dc=org
+memberOf: cn=SUPERUSER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=EXTRACTORAPP,ou=roles,dc=georchestra,dc=org
+memberOf: cn=GN_ADMIN,ou=roles,dc=georchestra,dc=org
+memberOf: cn=CKAN_SYSADMIN,ou=roles,dc=georchestra,dc=org
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=psc,ou=orgs,dc=georchestra,dc=org
+memberOf: cn=MAPSTORE_ADMIN,ou=roles,dc=georchestra,dc=org
+mail: tobia.dipisa@geo-solutions.it
+cn: Test ADMIN
+userPassword:: e1NTSEF9MG1Jdlo1dkU1MFJMc0d0dzJhZ2FEVm5KdTdjeE5UZzRPRE01TmpVM
+ 056VXc=
+entryCSN: 20200507082057.751668Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200507082057Z
+
+dn: uid=geoserver_privileged_user,ou=users,dc=georchestra,dc=org
+sn: geoserver_privileged_user
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: top
+mail: psc+geoserver_privileged_user@georchestra.org
+uid: geoserver_privileged_user
+cn: geoserver_privileged_user
+description: Do not modify.  This is a required user for extractorapp, geofe
+ nce, mapfishapp...
+userPassword:: e1NIQX1XMlY4d2UrOFdNanpma28rMUtZVDFZcWZFVDQ9
+structuralObjectClass: inetOrgPerson
+entryUUID: f9866e2a-64d5-1039-8d5d-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+entryCSN: 20190906093932.465575Z#000000#000#000000
+modifyTimestamp: 20190906093932Z
+memberOf: cn=ADMINISTRATOR,ou=roles,dc=georchestra,dc=org
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: uid=testpendinguser,ou=users,dc=georchestra,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: shadowAccount
+objectClass: top
+objectClass: georchestraUser
+givenName: Test
+sn: PENDINGUSER
+description: User pending admin validation
+userPassword:: e1NIQX16cnJXRCtmbnc2QjZGVDRpcFVYMzh0d1VxRHM9
+mail: psc+testpendinguser@georchestra.org
+structuralObjectClass: inetOrgPerson
+entryUUID: f9997b28-64d5-1039-8d5e-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+memberOf: cn=pendingorg,ou=orgs,dc=georchestra,dc=org
+cn: Test PENDINGUSER
+uid: testpendinguser
+entryCSN: 20191121134259.847148Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20191121134259Z
+
+dn: uid=testdelegatedadmin,ou=users,dc=georchestra,dc=org
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: shadowAccount
+objectClass: top
+uid: testdelegatedadmin
+givenName: Test
+sn: DELEGATEDADMIN
+description: User with admin delegation
+userPassword:: e1NIQX02OGRFejBlb25BYkdjVm1aWkFoQVVDYmo3bTQ9
+mail: psc+testdelegatedadmin@georchestra.org
+cn: testdelegatedadmin
+structuralObjectClass: inetOrgPerson
+entryUUID: f99bf7cc-64d5-1039-8d5f-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+entryCSN: 20190906093932.606724Z#000000#000#000000
+modifyTimestamp: 20190906093932Z
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=ORGADMIN,ou=roles,dc=georchestra,dc=org
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: ou=roles,dc=georchestra,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: roles
+structuralObjectClass: organizationalUnit
+entryUUID: f9ae73e8-64d5-1039-8d60-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+entryCSN: 20190906093932.727866Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093932Z
+
+dn: cn=ADMINISTRATOR,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: ADMINISTRATOR
+description: This role grants admin access to GeoServer
+member: uid=geoserver_privileged_user,ou=users,dc=georchestra,dc=org
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=mreboux,ou=users,dc=georchestra,dc=org
+member: uid=cmorales,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: f9b1482a-64d5-1039-8d61-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093932Z
+entryCSN: 20200506112621.248742Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200506112621Z
+
+dn: cn=SUPERUSER,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: SUPERUSER
+description: This role grants full control of users, roles & organizations v
+ ia the console application
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa005d84-64d5-1039-8d62-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093933Z
+entryCSN: 20200812141345.137134Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200812141345Z
+
+dn: cn=EXTRACTORAPP,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: EXTRACTORAPP
+description: This role allows users to extract geodata
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa1d4796-64d5-1039-8d63-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093933Z
+entryCSN: 20200506112622.189641Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200506112622Z
+
+dn: cn=GN_ADMIN,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: GN_ADMIN
+description: This role grants admin access to GeoNetwork
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa3965de-64d5-1039-8d64-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093933Z
+entryCSN: 20200506112618.886338Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200506112618Z
+
+dn: cn=GN_EDITOR,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: GN_EDITOR
+description: This role grants edit rights in GeoNetwork
+member: uid=testeditor,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa4bed1c-64d5-1039-8d65-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093933Z
+entryCSN: 20190906093933.759884Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093933Z
+
+dn: cn=GN_REVIEWER,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: GN_REVIEWER
+description: This role grants reviewer (publish) rights in GeoNetwork
+member: uid=testreviewer,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa61295c-64d5-1039-8d66-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093933Z
+entryCSN: 20190906093933.899052Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093933Z
+
+dn: cn=CKAN_SYSADMIN,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: CKAN_SYSADMIN
+description: This role grants full admin rights to CKAN
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa6f3060-64d5-1039-8d67-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093933Z
+entryCSN: 20200506112631.362134Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200506112631Z
+
+dn: cn=CKAN_ADMIN,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: CKAN_ADMIN
+description: This role grants admin rights in CKAN, scoped to user's org
+structuralObjectClass: groupOfMembers
+entryUUID: fa82c4e0-64d5-1039-8d68-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093934Z
+entryCSN: 20190906093934.119301Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093934Z
+
+dn: cn=CKAN_EDITOR,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: CKAN_EDITOR
+description: This role grants metadata edit rights in CKAN, scoped to user's
+  org
+member: uid=testeditor,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fa90322e-64d5-1039-8d69-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093934Z
+entryCSN: 20190906093934.207296Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093934Z
+
+dn: cn=USER,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: USER
+description: This role is required to log into geOrchestra
+member: uid=testuser,ou=users,dc=georchestra,dc=org
+member: uid=testeditor,ou=users,dc=georchestra,dc=org
+member: uid=testreviewer,ou=users,dc=georchestra,dc=org
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=testdelegatedadmin,ou=users,dc=georchestra,dc=org
+member: uid=cmorales,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+member: uid=mreboux,ou=users,dc=georchestra,dc=org
+member: uid=gautier.ringeisen,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fab15d1e-64d5-1039-8d6a-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093934Z
+entryCSN: 20200812141434.326296Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200812141434Z
+
+dn: cn=ORGADMIN,ou=roles,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+cn: ORGADMIN
+description: This role is automatically granted to all users holding an admi
+ n delegation
+member: uid=testdelegatedadmin,ou=users,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: faf9777a-64d5-1039-8d6b-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093934Z
+entryCSN: 20190906093934.897196Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093934Z
+
+dn: ou=orgs,dc=georchestra,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: orgs
+structuralObjectClass: organizationalUnit
+entryUUID: fb11fee4-64d5-1039-8d6c-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.057949Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: ou=pendingorgs,dc=georchestra,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: pendingorgs
+structuralObjectClass: organizationalUnit
+entryUUID: fb19879a-64d5-1039-8d6d-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.107328Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: o=psc,ou=orgs,dc=georchestra,dc=org
+objectClass: organization
+objectClass: top
+objectClass: georchestraOrg
+o: psc
+businessCategory: Association
+postalAddress: 127 rue georchestra, 73590 Chamblille
+description: Association PSC geOrchestra
+jpegPhoto:: /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBQgMFBofBgYHCg0dHhwHBwgMFB0j
+ HAcJCw8aLCgfCQsTHCI3NCcMEhwgKTQ5LhkgJyw0PTwzJC4wMTgyNDL/2wBDAQkJDBgyMjIyCQs
+ NITIyMjIMDRwyMjIyMhghMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wA
+ ARCAAyAMQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAHwEAA
+ wEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+ MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUp
+ TVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7
+ i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAtREAAgECBAQDBAcFB
+ AQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygp
+ KjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJm
+ aoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9
+ oADAMBAAIRAxEAPwD3+iisrxF4ms9MgaXUnIjXhUHWeVuixD1c00uy8kNLsvJGozqo+dgo6sx/h
+ A9TWNL458PxnE3iTR0boUMycH35r5o8W/EvV9Xc/bLp4bfP7jT4jhY1/wCmg7n3P4YrlhjtXfDC
+ fzz+R2wwv88j7TtL+2nXNldW86dpImBH/fSmp6+NNJ1/ULBw2kX89tIOd0Z++PSRehB9wa+jvht
+ 8Uo9ZQrerHFfIN08a9LqL+9CPY9R2rGvh2tnddfIyrUGtnfv5He0VxHiz4ky2ky2/hzSzqWosPM
+ 8jOFs0I63De456jA6mqZb4mgbtnhJj977GN+SPQPn/ANmrFU31cV1RkoPq4rqj0OiuM8G/Ec6hI
+ 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
+labeledURI: https://www.georchestra.org/
+structuralObjectClass: organization
+entryUUID: fb1c1a28-64d5-1039-8d6e-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.124186Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: cn=psc,ou=orgs,dc=georchestra,dc=org
+objectClass: groupOfMembers
+objectClass: top
+cn: psc
+description: 62053,62267,62565,62685,62696,62862,62562
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=testuser,ou=users,dc=georchestra,dc=org
+o: Project Steering Committee
+ou: PSC
+seeAlso: o=psc,ou=orgs,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fb26d166-64d5-1039-8d6f-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.194415Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: o=c2c,ou=orgs,dc=georchestra,dc=org
+objectClass: organization
+objectClass: top
+objectClass: georchestraOrg
+o: c2c
+businessCategory: Company
+postalAddress:: MTggUnVlIGR1IGxhYyBTYWludCBBbmRyw6ksIDczMDAwIENoYW1iw6lyeQ==
+labeledURI: https://www.camptocamp.com/
+description: Camptocamp SAS France
+structuralObjectClass: organization
+entryUUID: fb42344c-64d5-1039-8d70-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.373890Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: cn=c2c,ou=orgs,dc=georchestra,dc=org
+objectClass: groupOfMembers
+objectClass: top
+cn: c2c
+description: 62053
+member: uid=testeditor,ou=users,dc=georchestra,dc=org
+o: Camptocamp
+ou: C2C
+seeAlso: o=c2c,ou=orgs,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fb4cfbde-64d5-1039-8d71-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.444529Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: o=cra,ou=orgs,dc=georchestra,dc=org
+objectClass: organization
+objectClass: georchestraOrg
+objectClass: top
+o: cra
+businessCategory: Company
+postalAddress: Rue Jean Wenger - Valentin, 67000 Strasbourg
+labeledURI: https://www.grandest.fr/
+description:: Q29uc2VpbCBSw6lnaW9uYWw=
+structuralObjectClass: organization
+entryUUID: fb6b9594-64d5-1039-8d72-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.645080Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: cn=cra,ou=orgs,dc=georchestra,dc=org
+objectClass: groupOfMembers
+objectClass: top
+cn: cra
+description: 62053
+member: uid=testreviewer,ou=users,dc=georchestra,dc=org
+o:: Q29uc2VpbCByw6lnaW9uYWwgZCdBbHNhY2U=
+ou: CRA
+seeAlso: o=cra,ou=orgs,dc=georchestra,dc=org
+structuralObjectClass: groupOfMembers
+entryUUID: fb76fef2-64d5-1039-8d73-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+entryCSN: 20190906093935.719868Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20190906093935Z
+
+dn: o=pendingorg,ou=orgs,dc=georchestra,dc=org
+objectClass: organization
+objectClass: top
+objectClass: georchestraOrg
+businessCategory: Company
+postalAddress: Null island
+labeledURI: https://www.fictive.pending.org/
+description: Pending org on Null Island
+structuralObjectClass: organization
+entryUUID: fb8b93b2-64d5-1039-8d74-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+o: pendingorg
+entryCSN: 20191121134010.801387Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20191121134010Z
+
+dn: cn=pendingorg,ou=orgs,dc=georchestra,dc=org
+objectClass: groupOfMembers
+objectClass: top
+description: 59107
+member: uid=testpendinguser,ou=users,dc=georchestra,dc=org
+o: Fictive org pending admin validation
+ou: PENDINGORG
+structuralObjectClass: groupOfMembers
+entryUUID: fb8f7a18-64d5-1039-8d75-bb2599055f5f
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20190906093935Z
+cn: pendingorg
+seeAlso: o=pendingorg,ou=orgs,dc=georchestra,dc=org
+entryCSN: 20191121134010.783414Z#000000#000#000000
+modifyTimestamp: 20191121134010Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: cn=MAPSTORE_ADMIN,ou=roles,dc=georchestra,dc=org
+cn: MAPSTORE_ADMIN
+objectClass: top
+objectClass: groupOfMembers
+structuralObjectClass: groupOfMembers
+entryUUID: c0c99982-8b44-1039-8660-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191025072815Z
+member: uid=testadmin,ou=users,dc=georchestra,dc=org
+member: uid=mreboux,ou=users,dc=georchestra,dc=org
+member: uid=cmorales,ou=users,dc=georchestra,dc=org
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+member: uid=gautier.ringeisen,ou=users,dc=georchestra,dc=org
+entryCSN: 20200812141307.966600Z#000000#000#000000
+modifyTimestamp: 20200812141307Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: cn=RM,ou=orgs,dc=georchestra,dc=org
+ou: RM
+seeAlso: o=RM,ou=orgs,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+o:: UmVubmVzIE3DqXRyb3BvbGU=
+structuralObjectClass: groupOfMembers
+entryUUID: ea02a794-a09d-1039-8661-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191121112924Z
+member: uid=cmorales,ou=users,dc=georchestra,dc=org
+member: uid=mreboux,ou=users,dc=georchestra,dc=org
+cn: RM
+entryCSN: 20200430081407.605782Z#000000#000#000000
+modifyTimestamp: 20200430081407Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: o=RM,ou=orgs,dc=georchestra,dc=org
+businessCategory: Other
+postalAddress:
+objectClass: top
+objectClass: organization
+structuralObjectClass: organization
+entryUUID: ea15ecf0-a09d-1039-8662-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191121112924Z
+o: RM
+entryCSN: 20191121120253.682009Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20191121120253Z
+
+dn: uid=cmorales,ou=users,dc=georchestra,dc=org
+mail: c.morales@rennesmetropole.fr
+givenName: Catherine
+sn: MORALES
+cn: Catherine MORALES
+title: Chef de projets SIG
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: georchestraUser
+userPassword:: e1NTSEF9eURaRWdqVis3bXdPdXFDN05MbVNSK1lTM1NneE5UYzBNek0xTnpZM
+ E5UVTU=
+structuralObjectClass: inetOrgPerson
+entryUUID: ea209c4a-a09d-1039-8663-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191121112924Z
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=RM,ou=orgs,dc=georchestra,dc=org
+memberOf: cn=ADMINISTRATOR,ou=roles,dc=georchestra,dc=org
+memberOf: cn=MAPSTORE_ADMIN,ou=roles,dc=georchestra,dc=org
+uid: cmorales
+entryCSN: 20191121120303.569694Z#000000#000#000000
+modifyTimestamp: 20191121120303Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: cn=GeoSolutions,ou=orgs,dc=georchestra,dc=org
+ou: GeoSolutions
+seeAlso: o=GeoSolutions,ou=orgs,dc=georchestra,dc=org
+objectClass: top
+objectClass: groupOfMembers
+o: GeoSolutions
+structuralObjectClass: groupOfMembers
+entryUUID: 7f9fe3f2-a0ad-1039-8664-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191121132057Z
+member: uid=tdipisa,ou=users,dc=georchestra,dc=org
+cn: GeoSolutions
+entryCSN: 20191121132224.243626Z#000000#000#000000
+modifyTimestamp: 20191121132224Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: o=GeoSolutions,ou=orgs,dc=georchestra,dc=org
+businessCategory: Company
+postalAddress:
+objectClass: top
+objectClass: organization
+structuralObjectClass: organization
+entryUUID: 7fae262e-a0ad-1039-8665-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191121132057Z
+o: GeoSolutions
+entryCSN: 20191121132224.395142Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20191121132224Z
+
+dn: uid=tdipisa,ou=users,dc=georchestra,dc=org
+mail: ilcovo@gmail.com
+givenName: Tobia
+sn: Di Pisa
+cn: Tobia Di Pisa
+title: Project Manager
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: georchestraUser
+userPassword:: e1NTSEF9MS9uRkdPSFVObnRXSU56a1NoU2ZiMXJkZFVjeE5UYzBNelF5TkRVM
+ 09UZzA=
+structuralObjectClass: inetOrgPerson
+entryUUID: 7fb63cec-a0ad-1039-8666-53f6c8badeab
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20191121132057Z
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=GeoSolutions,ou=orgs,dc=georchestra,dc=org
+memberOf: cn=SUPERUSER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=GN_ADMIN,ou=roles,dc=georchestra,dc=org
+memberOf: cn=ADMINISTRATOR,ou=roles,dc=georchestra,dc=org
+memberOf: cn=EXTRACTORAPP,ou=roles,dc=georchestra,dc=org
+memberOf: cn=MAPSTORE_ADMIN,ou=roles,dc=georchestra,dc=org
+memberOf: cn=CKAN_SYSADMIN,ou=roles,dc=georchestra,dc=org
+uid: tdipisa
+entryCSN: 20191121132234.226716Z#000000#000#000000
+modifyTimestamp: 20191121132234Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: cn=TEST_ROLE,ou=roles,dc=georchestra,dc=org
+cn: TEST_ROLE
+objectClass: top
+objectClass: groupOfMembers
+structuralObjectClass: groupOfMembers
+entryUUID: 022c4c14-06cc-103a-9374-9ff00475d0c5
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200330121620Z
+description: Role used for test
+entryCSN: 20200611112151.555199Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200611112151Z
+
+dn: cn=GISDATA,ou=pendingorgs,dc=georchestra,dc=org
+ou: GISDATA
+seeAlso: o=GISDATA,ou=pendingorgs,dc=georchestra,dc=org
+cn: GISDATA
+objectClass: top
+objectClass: groupOfMembers
+o: GISDATA
+structuralObjectClass: groupOfMembers
+entryUUID: b20202ea-09ed-103a-9375-9ff00475d0c5
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200403115502Z
+entryCSN: 20200403115502.259333Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200403115502Z
+
+dn: o=GISDATA,ou=pendingorgs,dc=georchestra,dc=org
+businessCategory: Company
+postalAddress:
+objectClass: top
+objectClass: organization
+objectClass: georchestraOrg
+o: GISDATA
+structuralObjectClass: organization
+entryUUID: b231d9c0-09ed-103a-9376-9ff00475d0c5
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200403115502Z
+entryCSN: 20200403115502.572855Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200403115502Z
+
+dn: cn=MSDC,ou=pendingorgs,dc=georchestra,dc=org
+ou: MSDC
+seeAlso: o=MSDC,ou=pendingorgs,dc=georchestra,dc=org
+cn: MSDC
+objectClass: top
+objectClass: groupOfMembers
+o: MSDC
+structuralObjectClass: groupOfMembers
+entryUUID: 00f72afc-159b-103a-8d6e-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200418083320Z
+entryCSN: 20200418083320.918737Z#000000#000#000000
+modifyTimestamp: 20200418083320Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: o=MSDC,ou=pendingorgs,dc=georchestra,dc=org
+businessCategory: Other
+postalAddress:
+objectClass: top
+objectClass: organization
+objectClass: georchestraOrg
+o: MSDC
+structuralObjectClass: organization
+entryUUID: 0112184e-159b-103a-8d6f-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200418083320Z
+entryCSN: 20200418083320.629524Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200418083320Z
+
+dn: uid=mreboux,ou=users,dc=georchestra,dc=org
+mail: m.reboux@rennesmetropole.fr
+givenName:: TWHDq2w=
+sn: REBOUX
+cn:: TWHDq2wgUkVCT1VY
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: georchestraUser
+userPassword:: e1NTSEF9TDI1L1c5MEUzMGNYbXlCSHNjWXBjS01FU200eE5UZzRNak0wTkRRM
+ 016WXg=
+structuralObjectClass: inetOrgPerson
+entryUUID: 4ea3f13a-1f06-103a-8d71-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200430081407Z
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=RM,ou=orgs,dc=georchestra,dc=org
+memberOf: cn=ADMINISTRATOR,ou=roles,dc=georchestra,dc=org
+memberOf: cn=MAPSTORE_ADMIN,ou=roles,dc=georchestra,dc=org
+uid: mreboux
+entryCSN: 20200430081452.176479Z#000000#000#000000
+modifyTimestamp: 20200430081452Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: cn=bl,ou=pendingorgs,dc=georchestra,dc=org
+ou: bl
+seeAlso: o=bl,ou=pendingorgs,dc=georchestra,dc=org
+cn: bl
+objectClass: top
+objectClass: groupOfMembers
+o: bl
+structuralObjectClass: groupOfMembers
+entryUUID: c8710fde-3ba8-103a-8d72-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200605184742Z
+entryCSN: 20200605184743.060128Z#000000#000#000000
+modifyTimestamp: 20200605184743Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: o=bl,ou=pendingorgs,dc=georchestra,dc=org
+businessCategory: Company
+postalAddress:
+objectClass: top
+objectClass: organization
+objectClass: georchestraOrg
+o: bl
+structuralObjectClass: organization
+entryUUID: c880ae9e-3ba8-103a-8d73-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200605184742Z
+entryCSN: 20200605184742.863900Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200605184742Z
+
+dn: cn=bl1,ou=pendingorgs,dc=georchestra,dc=org
+ou: bl
+seeAlso: o=bl1,ou=pendingorgs,dc=georchestra,dc=org
+cn: bl1
+objectClass: top
+objectClass: groupOfMembers
+o: bl
+structuralObjectClass: groupOfMembers
+entryUUID: dbd4f16c-3ba8-103a-8d75-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200605184815Z
+entryCSN: 20200605184815.292821Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200605184815Z
+
+dn: o=bl1,ou=pendingorgs,dc=georchestra,dc=org
+businessCategory: Company
+postalAddress:
+objectClass: top
+objectClass: organization
+objectClass: georchestraOrg
+o: bl1
+structuralObjectClass: organization
+entryUUID: dbdd5438-3ba8-103a-8d76-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200605184815Z
+entryCSN: 20200605184815.347781Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200605184815Z
+
+dn: cn=EMS,ou=orgs,dc=georchestra,dc=org
+ou: EMS
+objectClass: top
+objectClass: groupOfMembers
+o:: VmlsbGUgZXQgRXVyb23DqXRyb3BvbGUgZGUgU3RyYXNib3VyZw==
+structuralObjectClass: groupOfMembers
+entryUUID: 67ed35a6-7015-103a-8d77-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200811115616Z
+member: uid=gautier.ringeisen,ou=users,dc=georchestra,dc=org
+cn: EMS
+seeAlso: o=EMS,ou=orgs,dc=georchestra,dc=org
+entryCSN: 20200812141237.147145Z#000000#000#000000
+modifyTimestamp: 20200812141237Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+
+dn: o=EMS,ou=orgs,dc=georchestra,dc=org
+businessCategory: Other
+labeledURI: https://www.strasbourg.eu
+postalAddress:: MSBQYXJjIGRlIGwnw4l0b2lsZSwgNjcwNzYgU3RyYXNib3VyZw==
+objectClass: top
+objectClass: organization
+objectClass: georchestraOrg
+structuralObjectClass: organization
+entryUUID: 68179634-7015-103a-8d78-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200811115616Z
+o: EMS
+entryCSN: 20200812141237.158264Z#000000#000#000000
+modifiersName: cn=admin,dc=georchestra,dc=org
+modifyTimestamp: 20200812141237Z
+
+dn: uid=gautier.ringeisen,ou=users,dc=georchestra,dc=org
+mail: gautier.ringeisen@strasbourg.eu
+givenName: Gautier
+sn: Ringeisen
+cn: Gautier Ringeisen
+title: Chef de projet informatique
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+objectClass: georchestraUser
+userPassword:: e1NTSEF9WEgybTNNSmRRMlhMZEpMc0F5MHFRMVlOY0xJeE5UazNNVFEyT1RjM
+ k56Y3k=
+structuralObjectClass: inetOrgPerson
+entryUUID: 68209a04-7015-103a-8d79-259c87a24205
+creatorsName: cn=admin,dc=georchestra,dc=org
+createTimestamp: 20200811115616Z
+memberOf: cn=USER,ou=roles,dc=georchestra,dc=org
+memberOf: cn=EMS,ou=orgs,dc=georchestra,dc=org
+memberOf: cn=MAPSTORE_ADMIN,ou=roles,dc=georchestra,dc=org
+uid: gautier.ringeisen
+entryCSN: 20200812141309.217178Z#000000#000#000000
+modifyTimestamp: 20200812141309Z
+modifiersName: cn=admin,dc=georchestra,dc=org
+

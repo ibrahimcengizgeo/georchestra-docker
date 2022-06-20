@@ -1,0 +1,175 @@
+version: "3"
+
+volumes:
+  postgresql_data:
+  postgresql_data_cadastrapp:
+  ldap_data:
+  ldap_config:
+  geoserver_geodata:
+  geoserver_datadir:
+  geoserver_tiles:
+  geoserver_native_libs:
+  mapfishapp_uploads:
+  extractorapp_extracts:
+  geonetwork_datadir:
+
+services:
+  database:
+    image: georchestra/database:20.0.6
+    restart: always
+    environment:
+      - POSTGRES_USER=georchestra
+      - POSTGRES_PASSWORD=georchestra
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+
+  database2:
+    build: ./postgres-cadastrapp
+    restart: always
+    environment:
+      - POSTGRES_USER=georchestra
+      - POSTGRES_PASSWORD=georchestra
+    volumes:
+      - postgresql_data_cadastrapp:/var/lib/postgresql/data
+
+  ldap:
+    image: georchestra/ldap:20.0.6
+    restart: always
+    environment:
+        - SLAPD_ORGANISATION=georchestra
+        - SLAPD_DOMAIN=georchestra.org
+        - SLAPD_PASSWORD=secret
+        - SLAPD_ADDITIONAL_MODULES=groupofmembers
+    volumes:
+      - ldap_data:/var/lib/ldap
+      - ldap_config:/etc/ldap
+
+  proxy:
+    image: georchestra/security-proxy:20.0.6
+    restart: always
+    depends_on:
+      - ldap
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=1G
+
+  cas:
+    image: georchestra/cas:20.0.6
+    restart: always
+    depends_on:
+      - ldap
+    volumes:
+      - ./config:/etc/georchestra
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=1G
+
+  header:
+    image: georchestra/header:20.0.6
+    restart: always
+    volumes:
+      - ./config:/etc/georchestra
+      - ./i18n:/var/lib/jetty/webapps/header/WEB-INF/classes/_header/i18n
+      - ./jsp:/var/lib/jetty/webapps/header/WEB-INF/jsp
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=512M
+
+  mapfishapp:
+    image: georchestra/mapfishapp:20.0.6
+    restart: always
+    depends_on:
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+      - mapfishapp_uploads:/mnt/mapfishapp_uploads
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=2G
+
+  mapstore:
+    image: geosolutionsit/mapstore2-georchestra:latest
+    restart: always
+    depends_on:
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+    environment:
+            - JAVA_OPTS=-Xms512m -Xmx512m -Dgeorchestra.datadir=/etc/georchestra
+
+  extractorapp:
+    image: georchestra/extractorapp:20.0.6
+    restart: always
+    depends_on:
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+      - extractorapp_extracts:/mnt/extractorapp_extracts
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=2G
+
+  geoserver:
+    image: georchestra/geoserver:20.0.5
+    restart: always
+    depends_on:
+      - ldap
+    volumes:
+      - ./config:/etc/georchestra
+      - geoserver_datadir:/mnt/geoserver_datadir
+      - geoserver_geodata:/mnt/geoserver_geodata
+      - geoserver_tiles:/mnt/geoserver_tiles
+      - geoserver_native_libs:/mnt/geoserver_native_libs
+        #- /home/geosolutions/docker/geoserver/plugins/dds/gs-dds-2.16-SNAPSHOT.jar:/var/lib/jetty/webapps/geoserver/WEB-INF/lib/gs-dds-2.16-SNAPSHOT.jar
+        #- /home/geosolutions/docker/geoserver/plugins/dds/worldwind-0.6.jar:/var/lib/jetty/webapps/geoserver/WEB-INF/lib/worldwind-0.6.jar
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=8G
+
+  console:
+    image: georchestra/console:20.0.6
+    restart: always
+    depends_on:
+      - ldap
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=1G
+
+  geonetwork:
+    image: georchestra/geonetwork:20.0.6
+    restart: always
+    depends_on:
+      - ldap
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+      - geonetwork_datadir:/mnt/geonetwork_datadir
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=6G
+
+  analytics:
+    image: georchestra/analytics:20.0.6
+    restart: always
+    depends_on:
+      - database
+    volumes:
+      - ./config:/etc/georchestra
+    environment:
+      - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
+      - XMS=256M
+      - XMX=1G
