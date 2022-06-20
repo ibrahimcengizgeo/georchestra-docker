@@ -131,6 +131,29 @@ Reading the [quick configuration guide](https://github.com/georchestra/datadir/b
 
 Most changes will require a service restart, except maybe updating viewer contexts & addons (`F5` will do).
 
+### How to install extension for GeoServer
+#### ex: gDAL extention
+
+In order to add the gdal extensions, the following volume is mounted
+
+       - ./geoserver-webapp/WEB-INF/lib:/var/lib/jetty/webapps/geoserver/WEB-INF/lib
+       
+Afterthat, instead of throwing the relevant jars into the container, we follow below path:
+
+1.Put the jars into `/home/geosolutions/docker/geoserver-webapp/WEB-INF/lib` folder on VM
+
+2.Recreate|Restart the docker `docker-compose -f docker-compose.yml up -d geoserver `
+
+3.Installed them successfully.       
+       
+To install libgdal-java and create a symbolic link, the entrypoint script was updated and mounted.
+
+       - ./docker-entrypoint.sh:/docker-entrypoint.sh
+   > apt-get update &&
+apt-get install libgdal-java &&
+ln -s /usr/lib/jni/libgdalalljni.so.20 /usr/lib/libgdalalljni.so    
+       
+
 ## Building
 
 Images used in the current composition are pulled from docker hub, which means they've been compiled by our CI.
