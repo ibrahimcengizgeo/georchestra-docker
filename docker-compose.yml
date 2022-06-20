@@ -97,6 +97,7 @@ services:
 
   geoserver:
     image: georchestra/geoserver:latest
+    user: root
     depends_on:
       - ldap
     volumes:
@@ -105,6 +106,7 @@ services:
       - geoserver_geodata:/mnt/geoserver_geodata
       - geoserver_tiles:/mnt/geoserver_tiles
       - geoserver_native_libs:/mnt/geoserver_native_libs
+      - ./docker-entrypoint.sh:/docker-entrypoint.sh
     environment:
       - JAVA_OPTIONS=-Dorg.eclipse.jetty.annotations.AnnotationParser.LEVEL=OFF
       - XMS=256M
